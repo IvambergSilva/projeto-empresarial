@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --CorPrincipal: #252B42;
+    --FontePrincipal: 'Montserrat', sans-serif;
+    font-size: 6.25%;
+}
+
+body {
+    background-color: #C4C4C4;
+}
+
+.conteudo {
+    max-width: 412rem;
+    width: 100%;
+    margin: auto;
+    background-color: var(--CorPrincipal);
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #FFFFFF4D;
+    padding: 25rem 0;
+}
+
+header h1 {
+    color: #FFF;
+    font: bold 32rem var(--FontePrincipal);
+    margin-left: 34rem;
+}
+
+header .menu {
+    margin-right: 34rem;
+    align-items: center;
+}
+
+header .menu .search, 
+header .menu .cart,
+header .menu .bars 
+{
+    width: 24rem;
+    height: 24rem;
+}
+
+#cart {
+    margin: 0 28rem;
+}
+
+header .menuTopicos {
+    margin-top: 53rem;
+}
+
+header .menuTopicos h2 {
+    color: #FFF;
+    font: normal 30rem var(--FontePrincipal);
+    text-align: center;
+    margin-top: 30rem;
+}
