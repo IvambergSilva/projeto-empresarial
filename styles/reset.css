@@ -128,3 +128,16 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+
+main {
+  padding-bottom: 1000px;
+  
+}
+
+footer {
+  color: aliceblue;
+  position: relative;
+  font-size: 40rem;
+  margin-top: 400rem;
+}
