@@ -1,23 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
     --CorPrincipal: #252B42;
     --CorPrimaria: #FF7B47;
     --CorSecundaria: #0D5C63;
+    --corSecTexto: #737373;
     --FontePrincipal: 'Montserrat', sans-serif;
     font-size: 6.25%;
 
 }
 
 body {
-    background-color: #252a41f5;
+    background-color: #252B42;
 }
 
 .conteudo {
     max-width: 412rem;
     width: 100%;
     margin: auto;
-    background-color: var(--CorPrincipal);
+    /* background-color: var(--CorPrincipal); */
 }
 
 header .container{
@@ -34,11 +35,13 @@ header h1 {
     margin-left: 34rem;
 }
 
+/* MENU */
 
 header .menu {
     margin-right: 34rem;
     align-items: center;
     display: flex;
+    position: relative;
 }
 
 header .menu .search, 
@@ -48,44 +51,100 @@ header .menu .cart
     height: 24rem;
 }
 
-header .menu .barMenu {
-    transform: rotateY(180deg);
-}
-
-header .menu .barMenu span {
-    display: block;
-    height: 2.5rem;
-    background-color: #FFF;
-    border-radius: 4px;
-}
-
-header .menu .barMenu span:nth-child(1){
-    width: 24rem;
-}
-
-header .menu .barMenu span:nth-child(2){
-    width: 18rem;
-    margin: 7rem 0;
-}
-
-header .menu .barMenu span:nth-child(3){
-    width: 12rem;
-}
-
 #cart {
     margin: 0 28rem;
 }
 
+/* BARRA DE MENU */
 
-header .menuTopicos {
-    margin-top: 53rem;
+.barMenu {
+    transform: rotateY(180deg);
+    right: 0;
+    display: block;
+    cursor: pointer;
 }
 
-header .menuTopicos h2 {
+.barMenu span {
+    display: block;
+    height: 2rem;
+    background-color: #FFF;
+    border-radius: 4px;
+}
+
+.barMenu span:nth-child(1){
+    width: 24rem;
+}
+
+.barMenu span:nth-child(2){
+    width: 18rem;
+    margin: 5rem 0;
+}
+
+.barMenu span:nth-child(3){
+    width: 12rem;
+}
+
+.barMenu, .barMenu span{
+    transition: all 0.3s ease-in-out;
+}
+
+.barMenu.active {
+    transition-delay: 0.6s;
+    transform: rotate(45deg);
+}
+
+.barMenu.active span:nth-child(2) {
+    width: 0;
+}
+
+.barMenu.active span:nth-child(1),
+.barMenu.active span:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.barMenu.active span:nth-child(1) {
+    transform: translateY(7rem);
+}
+
+.barMenu.active span:nth-child(3) {
+    transform: translateY(-7rem) rotate(90deg);
+    width: 24rem;
+}
+
+header .menuTopicos {
+    animation: esmaecer2 1s ease-in-out;
+    display: none;
+}
+
+@keyframes esmaecer2 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+header h2 {
     color: #FFF;
     font: normal 30rem var(--FontePrincipal);
     text-align: center;
     margin-top: 30rem;
+}
+
+.display {
+    display: block;
+    margin-top: 53rem;
+    animation: esmaecer 1s ease-in-out;
+}
+
+@keyframes esmaecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* MAIN */
@@ -93,7 +152,7 @@ header .menuTopicos h2 {
 main .apresentacao  {
     background-image: url('/images/backgroundMobile.svg');
     background-position: bottom center;
-    margin-top: 98rem;
+    margin-top: 30rem;
 
 }
 
@@ -172,7 +231,7 @@ main .servicos > p {
     margin: 10rem auto 75rem;
 }
 
-main .servicos div {
+main .servicos .servicosContainer div {
     width: 325rem;
     height: 142rem;
     border-radius: 5rem;
@@ -205,6 +264,50 @@ main .servicos div:nth-of-type(2) p {
 }
 
 
+main .conselho h2 {
+    font: 700 40rem/57rem var(--FontePrincipal);
+    color: #FFF;
+    text-align: center;
+    margin-top: 98rem;
+}
+
+main .conselho > p {
+    font: 500 14rem/20rem var(--FontePrincipal);
+    color: #FFF;
+    text-align: center;
+    width: 225rem;
+    margin: 10rem auto 75rem;
+}
+
+
+
+main .conselho div {
+    width: 230rem;
+    height: 365rem;
+    background: #FFF;
+    margin: 30rem auto;
+    position: relative;
+}
+
+main .conselho div h5 {
+    font: 700 16rem/24rem var(--FontePrincipal);
+    width: 165rem;
+    margin-left: 30rem;
+    padding-top: 30rem;
+}
+
+main .conselho div p {
+    font: 500 14rem/20rem var(--FontePrincipal);
+    color: var(--corSecTexto);
+    width: 160rem;
+    margin: 15rem 0 0 30rem;
+}
+
+main .conselho div img {
+    width: 230rem;
+    position: absolute;
+    bottom: 0;
+}
 
 
 
@@ -212,8 +315,101 @@ main .servicos div:nth-of-type(2) p {
 
 
 
+main .sobre {
+    width: 333rem;
+    margin: auto;
+    padding-top: 167rem;
+}
+
+main .sobre h2 {
+    font: 700 40rem/57rem var(--FontePrincipal);
+    color: #FFF;
+    text-align: center;
+}
+
+main .sobre p {
+    font: 500 14rem/20rem var(--FontePrincipal);
+    color: #FFF;
+    text-align: center;
+}
+
+main .sobre > p:nth-of-type(1){
+    margin: 10rem 0 100rem;
+}
+
+main .sobre figure {
+    position: relative;
+}
+
+main .sobre figure img:first-child {
+    width: 333rem;
+    height: 442rem;
+    position: absolute;
+    z-index: -1;
+}
+
+main .sobre figure div {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14.58%, rgba(56, 56, 56, 0.84) 100%);
+    width: 333rem;
+    height: 442rem;
+    margin: auto;
+}
+
+main .sobre figure button {
+    position: absolute;
+    width: 98rem;
+    height: 98rem;
+    border-radius: 50%;
+    background: var(--CorSecundaria);
+    border: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main .sobre figure button img:nth-child(1) {
+    width: 24rem;
+    height: 28.8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 
+main .sobre h2:nth-of-type(2) {
+    text-align: left;
+    margin: 72rem 0 10rem;
+}
+
+main .sobre p:nth-of-type(2) {
+    text-align: left;
+    margin-bottom: 50rem;
+}
 
 
+main .sobre .cardItem {
+    display: flex;
+    width: 333rem;
+}
 
+main .sobre .cardItem:nth-of-type(1) {
+    margin-bottom: 30rem;
+}
+
+main .sobre .cardItem img {
+    width: 32rem;
+    height: 32rem;
+    margin-right: 20rem;
+}
+
+main .sobre .cardItem h5 {
+    font: 700 16rem/24rem var(--FontePrincipal);
+    color: #FFF;
+    margin-bottom: 5rem;
+}
+
+main .sobre .cardItem p {
+    font: 600 14rem/24rem var(--FontePrincipal);
+    text-align: left;
+}
